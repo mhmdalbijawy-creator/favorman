@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Outfit", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4C430;
+  --color-gold-dark: #AA8C2C;
+  --color-rich-black: #050A15;
+  /* Deep Navy Blue */
+  --color-charcoal: #0B1221;
+  /* Darker Navy */
+  --color-off-white: #e5e5e5;
+
+  --font-ar-serif: "Cairo", sans-serif;
+  /* Unified look */
+  --font-ar-sans: "Cairo", sans-serif;
+}
+
+[lang="ar"],
+.font-ar {
+  font-family: var(--font-ar-sans) !important;
+  font-size: 1rem;
+  /* Reverting to original size */
+}
+
+[lang="ar"] .font-serif {
+  font-family: var(--font-ar-serif) !important;
+}
+
+[lang="en"],
+.font-en {
+  font-family: "Outfit", sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-rich-black text-off-white font-sans antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  @apply bg-gold text-rich-black;
+}
+
+/* Custom scrollbar for luxury feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-rich-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold/50;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(400%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
