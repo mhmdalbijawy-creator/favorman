@@ -22,7 +22,18 @@
 .font-ar {
   font-family: var(--font-ar-sans) !important;
   font-size: 1rem;
-  /* Reverting to original size */
+  letter-spacing: normal !important;
+  text-align: right;
+}
+
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] span,
+[lang="ar"] p,
+[lang="ar"] a,
+[lang="ar"] button {
+  letter-spacing: normal !important;
 }
 
 [lang="ar"] .font-serif {

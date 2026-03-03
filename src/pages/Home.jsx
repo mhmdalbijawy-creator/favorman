@@ -17,14 +17,26 @@ const Home = () => {
         setError(null);
         const formData = new FormData(e.target);
         formData.append("access_key", "979609b2-16a9-4e01-be1d-e5f6d417f6c2");
+        formData.append("from_name", "Favourman Website"); // Kept original as instruction implies general website identification, and the provided snippet's "Recruitment" is for a different context.
+        formData.append("subject", "New Inquiry from Home Page"); // Kept original as the provided snippet's "Talent Application" is for a different context.
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-            if (response.ok) {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
                 setIsSubmitted(true);
+                e.target.reset();
                 setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                console.error("Web3Forms Error:", data.message);
+                setError(data.message || t('common.error_message'));
             }
         } catch (err) {
+            console.error("Submission Error:", err); // Added more specific logging for catch block
             setError(t('common.error_message'));
         } finally {
             setIsSubmitting(false);

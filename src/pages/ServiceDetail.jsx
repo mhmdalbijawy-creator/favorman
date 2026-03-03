@@ -32,11 +32,22 @@ const ServiceDetail = () => {
         const formData = new FormData(e.target);
         formData.append("access_key", "979609b2-16a9-4e01-be1d-e5f6d417f6c2");
         formData.append("subject", `EXECUTIVE INQUIRY: ${selectedType.toUpperCase()} - ${service.title}`);
+        formData.append("from_name", "Favourman Service Detail");
 
         try {
-            await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-            setIsSubmitted(true);
-            setTimeout(() => setIsSubmitted(false), 5000);
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                setIsSubmitted(true);
+                e.target.reset();
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                console.error("Web3Forms Error:", data.message);
+            }
         } catch (err) {
             console.error(err);
         } finally {

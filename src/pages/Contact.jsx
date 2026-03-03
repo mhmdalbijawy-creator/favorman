@@ -16,7 +16,7 @@ const Contact = () => {
         const formData = new FormData(e.target);
         formData.append("access_key", "979609b2-16a9-4e01-be1d-e5f6d417f6c2");
         formData.append("subject", "New Executive Inquiry - Contact Page");
-        formData.append("from_name", "Favourman International Website");
+        formData.append("from_name", "Favourman Contact Form");
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -31,7 +31,8 @@ const Contact = () => {
                 e.target.reset();
                 setTimeout(() => setIsSubmitted(false), 5000);
             } else {
-                setError(t('common.error_message'));
+                console.error("Web3Forms Error:", data.message);
+                setError(data.message || t('common.error_message'));
             }
         } catch (err) {
             setError(t('common.error_message'));
