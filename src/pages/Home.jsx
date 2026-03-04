@@ -17,7 +17,7 @@ const Home = () => {
         setError(null);
 
         const formData = new FormData(e.target);
-        formData.append("access_key", "979609b2-16a9-4e01-be1d-e5f6d417f6c2");
+        formData.append("access_key", "57d25b96-1837-4c3e-9275-3f7267ae25ad");
         formData.append("from_name", "Favourman Website");
         formData.append("subject", "New Inquiry from Home Page");
 
