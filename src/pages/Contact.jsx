@@ -118,7 +118,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-1">{t('contact_info.contact_role')}</p>
-                                        <p className="text-white text-xl font-bold group-hover:text-gold transition-colors">{t('contact_person')}</p>
+                                        <p className="text-white text-xl font-bold group-hover:text-gold transition-colors">{t('contact_info.contact_person')}</p>
                                     </div>
                                 </div>
                             </div>
