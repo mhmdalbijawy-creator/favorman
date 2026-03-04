@@ -1,6 +1,6 @@
 export const serviceImages = [
     {
-        url: "https://images.unsplash.com/photo-1544211913-7ef00155b24c?q=80&w=1200&auto=format&fit=crop", // 1 Oil & Gas
+        url: "https://images.unsplash.com/photo-1574610558877-11a112d4c5e5?q=80&w=907&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // 1 Oil & Gas
         label: "Oil & Gas Exports"
     },
     {
